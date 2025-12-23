@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏆 Codeforces Tracker</h1>
+            <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+        </header>
+
+        <!-- Settings Panel (Hidden by default) -->
+        <div id="settingsPanel" class="settings-panel hidden">
+            <h2>Settings</h2>
+            <div class="setting-group">
+                <label for="handleInput">Codeforces Handle:</label>
+                <input type="text" id="handleInput" placeholder="Enter your handle">
+                <button id="saveHandleBtn" class="btn btn-primary">Save</button>
+            </div>
+            <div class="setting-group">
+                <label>
+                    <input type="checkbox" id="notificationToggle">
+                    Enable contest notifications (30 min before start)
+                </label>
+            </div>
+            <button id="closeSettingsBtn" class="btn btn-secondary">Close</button>
+        </div>
+
+        <!-- Main Content -->
+        <main id="mainContent" class="main-content">
+            <!-- User Info Section -->
+            <section id="userSection" class="section user-section">
+                <h2>User Info</h2>
+                <div class="user-info">
+                    <p><strong>Handle:</strong> <span id="userHandle">Loading...</span></p>
+                    <p><strong>Current Rating:</strong> <span id="userRating">--</span></p>
+                    <p><strong>Last Contest Rank:</strong> <span id="userRank">--</span></p>
+                </div>
+                <button id="refreshUserBtn" class="btn btn-small">Refresh</button>
+            </section>
+
+            <!-- Upcoming Contests Section -->
+            <section id="contestsSection" class="section contests-section">
+                <h2>Upcoming Contests</h2>
+                <div id="contestsList" class="contests-list">
+                    <p class="loading">Loading contests...</p>
+                </div>
+                <button id="refreshContestsBtn" class="btn btn-small">Refresh</button>
+            </section>
+
+            <!-- Loading/Error States -->
+            <div id="errorMessage" class="error-message hidden"></div>
+        </main>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
